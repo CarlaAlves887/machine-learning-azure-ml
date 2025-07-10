@@ -131,11 +131,71 @@ Quanddo o trabalho de Machine Learning automatizado estiver concluído, você po
 2. Na tab `Métricas` do trabalho de Machine Learning automatizado e observe os gráficos de `predicted_true` e `residuals`.
    ![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem18.png)
 
-# 4. Implantar e testar o modelo
+# 4. Implementar e testar o modelo
+
+1. Na tab `Modelo`, selecione `Implementar` e use a opção `Ponto de extremidade em tempo real` para implementar o modelo com as seguintes configurações:
+- **Contagem de instâncias**: 3
+- **Máquina virtual**: Standard_E8s_v3
+- **Ponto final**: Novo
+- **Nome do ponto de extremidade**: *deixe o padrão ou certifique-se de que seja globalmente exclusivo*
+- **Nome da implantação**: Deixe o padrão
+- **Recolha de dados de inferências**: *Desativado*
+- **Modelo de Pacote**: *Desativado*
+  ![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem19.png)
+
+2. Aguarde o início da implementação. O estado da implementação do endpoint predict-rentals será indicado na parte principal da página como `Em execução`
+3. Aguarde até que o estado da implementação mude para `Bem-sucedido`. Isto pode levar alguns minutos.
 
 
+# 5. Testar o serviço implementado
+
+1. No Azure Machine Learning Studio, no menu à esquerda, selecione `` e abra o ponto de extremidade em tempo real `predict-rentals`.
+2. Na página do ponto final em tempo real do `predict-rentals`, selecione a tab Testar
+3. No ecrã `Inserir dados para teste de ponto de extremidade`, substituir pelo código
+
+`
+{
+    "input_data": {
+        "columns": [
+            "day",
+            "mnth",
+            "year",
+            "season",
+            "holiday",
+            "weekday",
+            "workingday",
+            "weathersit",
+            "temp",
+            "atemp",
+            "hum",
+            "windspeed"
+        ],
+        "index": [0],
+        "data": [[1, 1, 2022, 2, 0, 1, 1, 2, 0.3, 0.3, 0.3, 0.3]]
+    }
+}
+`
+
+4. Clicar no botão `Testar`
+  
+5. Estes foram os `Resultados do teste`
+`
+ [
+   361.4150044515406
+ ]
+`
+![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem20.png)
+
+# 6. Limpar 
+1. No Azure Machine Learning Studio , na tab `Pontos finais` , selecione o ponto de extremidade "predict-rentals" . Em seguida, selecione "Excluir" e confirme que deseja excluir o ponto de extremidade.
+2. No portal do Azure , na página `Resources Group` , abra o grupo de recursos que você especificou ao criar seu espaço de trabalho do Azure Machine Learning.
+Clique em Excluir grupo de recursos , digite o nome do grupo de recursos para confirmar que deseja excluí-lo e selecione Excluir.
 
 ### Dados de input utilizados para o teste (Pontos de extremidade)
 
 [input.json](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/input.json)
+
+### Resultado do teste (Pontos de extremidade)
+
+[result.json](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/result.json)
 
