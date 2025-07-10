@@ -12,6 +12,19 @@ Na barra de pesquisa, procurar por `Machine Learning` e selecionar a opção `Az
 
 ![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem2.png)
 
+Criar o novo `Azure Machine Learning` resoure com as seguintes configurações:
+- **Subscription**: Selecionar a sua subscrição do azure.
+- **Resource group**: Criar ou selecionar um resource group.
+- **Name**: Defina um nome exclusivo para o seu worspace.
+- **Region**: Selecionar East US.
+- **Storage account**: Um novo storage account será criado por defeito para o seu workspace.
+- **Key vault**: Um novo key vault será criado por defeito para o seu workspace.
+- **Application insights**: Um novo application insights será criado por defeito para o seu workspace.
+- **Container registry**: None (um será criado automaticamente na primeira vez que você implementar um modelo num container).
+
+Selecionar `Review + Create` e aguarde uns minutos até que o deployment termine com sucesso
+
+![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem3.png)
 
 
 
