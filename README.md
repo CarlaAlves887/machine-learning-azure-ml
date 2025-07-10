@@ -121,6 +121,19 @@ Aguarde a conclusão do trabalho.
 
 ![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem16.png)
 
+# 3. Análise o melhor modelo
+
+Quanddo o trabalho de Machine Learning automatizado estiver concluído, você poderá rever o melhor modelo de treino.
+
+1. Na tab `Descrição geral` do trabalho de Machine Learning automatizado, observe o resumo do melhor modelo. Selecione a descrição do campo `Nome do algoritmo` para ver os detalhes do melhor modelo.
+   ![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem17.png)
+
+2. Na tab `Métricas` do trabalho de Machine Learning automatizado e observe os gráficos de `predicted_true` e `residuals`.
+   ![](https://github.com/CarlaAlves887/machine-learning-azure-ml/blob/main/Imagem18.png)
+
+# 4. Implantar e testar o modelo
+
+
 
 ### Dados de input utilizados para o teste (Pontos de extremidade)
 
